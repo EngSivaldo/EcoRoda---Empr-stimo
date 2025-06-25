@@ -1,0 +1,43 @@
+body {
+  background: linear-gradient(135deg, #e0f7e9, #f0f4f3);
+  font-family: "Segoe UI", sans-serif;
+}
+.card {
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+.btn-custom {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.btn-custom:hover {
+  background-color: #1e7e34;
+  transform: scale(1.03);
+}
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: #28a745;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.form-label::after {
+  content: "*";
+  color: red;
+  margin-left: 4px;
+}
+.history-table {
+  margin-top: 30px;
+}

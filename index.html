@@ -1,0 +1,158 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoRoda - Empréstimo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="text-center mb-4">
+        <div class="logo">🌱 EcoRoda</div>
+        <p class="text-muted">Sistema de Empréstimo de Sacolas Sustentáveis</p>
+      </div>
+
+      <div id="mensagem" class="alert d-none" role="alert"></div>
+
+      <div class="card p-4">
+        <form id="emprestimo-form">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nome" class="form-label">Nome Completo</label>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  placeholder="Digite seu nome"
+                  required
+                />
+                <label for="nome">Digite seu nome</label>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="telefone" class="form-label">Telefone</label>
+              <div class="input-group">
+                <span class="input-group-text"
+                  ><i class="bi bi-telephone"></i
+                ></span>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="telefone"
+                  placeholder="(11) 91234-5678"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-md-8">
+              <label for="endereco" class="form-label">Endereço</label>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="endereco"
+                  placeholder="Rua, número, bairro"
+                  required
+                />
+                <label for="endereco">Rua, número, bairro</label>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="cpf" class="form-label">CPF</label>
+              <div class="input-group">
+                <span class="input-group-text"
+                  ><i class="bi bi-person-vcard"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cpf"
+                  placeholder="000.000.000-00"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="quantidade" class="form-label">Qtd. de Sacolas</label>
+              <input
+                type="number"
+                class="form-control"
+                id="quantidade"
+                placeholder="Ex: 2"
+                min="1"
+                max="10"
+                required
+              />
+            </div>
+
+            <div class="col-md-4">
+              <label for="tamanho" class="form-label">Tamanho</label>
+              <select class="form-select" id="tamanho" required>
+                <option value="">Selecione...</option>
+                <option value="Pequena">Pequena (10L)</option>
+                <option value="Média">Média (20L)</option>
+                <option value="Grande">Grande (35L)</option>
+              </select>
+            </div>
+
+            <div class="col-md-4">
+              <label for="retirada" class="form-label">Retirada</label>
+              <select class="form-select" id="retirada" required>
+                <option value="">Selecione...</option>
+                <option value="Caixa 1">Caixa 1</option>
+                <option value="Caixa 2">Caixa 2</option>
+                <option value="Autoatendimento">Autoatendimento</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="d-grid mt-4">
+            <button type="submit" class="btn btn-custom btn-lg">
+              <i class="bi bi-bag-check"></i> Confirmar Empréstimo
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="text-center mt-4">
+        <p class="text-success">
+          💡 Devolva em até 15 dias para evitar taxa. Ganhe pontos
+          EcoFidelidade!
+        </p>
+      </div>
+
+      <div class="card p-3 mt-5 history-table">
+        <h5 class="text-center mb-3">📋 Histórico de Empréstimos</h5>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Tamanho</th>
+              <th>Qtd</th>
+              <th>Retirada</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-historico"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
