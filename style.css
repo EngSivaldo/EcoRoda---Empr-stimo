@@ -1,27 +1,45 @@
+/* style.css */
+
 body {
   background: linear-gradient(135deg, #e0f7e9, #f0f4f3);
   font-family: "Segoe UI", sans-serif;
+  transition: background 0.5s ease;
 }
+
+body.dark-mode {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #f5f5f5;
+}
+
 .card {
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
 }
+
+.card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
 .btn-custom {
   background-color: #28a745;
   color: white;
   font-weight: bold;
   transition: all 0.3s;
 }
+
 .btn-custom:hover {
   background-color: #1e7e34;
   transform: scale(1.03);
 }
+
 .logo {
   font-size: 32px;
   font-weight: bold;
   color: #28a745;
   animation: pulse 2s infinite;
 }
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -33,11 +51,59 @@ body {
     transform: scale(1);
   }
 }
+
 .form-label::after {
   content: "*";
   color: red;
   margin-left: 4px;
 }
+
 .history-table {
   margin-top: 30px;
+}
+
+/* Navbar */
+.navbar {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.dark-mode {
+  background-color: #1c2833;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #28a745;
+}
+
+/* Alertas animados */
+.alert {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.5s ease;
+}
+
+.alert.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botão dark mode */
+#toggle-dark {
+  border: none;
+  background: transparent;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #28a745;
+  transition: color 0.3s;
+}
+
+#toggle-dark:hover {
+  color: #1e7e34;
 }

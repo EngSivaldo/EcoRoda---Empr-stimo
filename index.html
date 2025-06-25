@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -16,75 +15,68 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="container mt-5">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">🌱 EcoRoda</a>
+        <button class="ms-auto" id="toggle-dark" title="Alternar modo escuro">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <div id="mensagem" class="alert d-none" role="alert"></div>
+
       <div class="text-center mb-4">
-        <div class="logo">🌱 EcoRoda</div>
         <p class="text-muted">Sistema de Empréstimo de Sacolas Sustentáveis</p>
       </div>
-
-      <div id="mensagem" class="alert d-none" role="alert"></div>
 
       <div class="card p-4">
         <form id="emprestimo-form">
           <div class="row g-3">
             <div class="col-md-6">
               <label for="nome" class="form-label">Nome Completo</label>
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nome"
-                  placeholder="Digite seu nome"
-                  required
-                />
-                <label for="nome">Digite seu nome</label>
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="nome"
+                placeholder="Digite seu nome"
+                required
+              />
             </div>
 
             <div class="col-md-6">
               <label for="telefone" class="form-label">Telefone</label>
-              <div class="input-group">
-                <span class="input-group-text"
-                  ><i class="bi bi-telephone"></i
-                ></span>
-                <input
-                  type="tel"
-                  class="form-control"
-                  id="telefone"
-                  placeholder="(11) 91234-5678"
-                  required
-                />
-              </div>
+              <input
+                type="tel"
+                class="form-control"
+                id="telefone"
+                placeholder="(11) 91234-5678"
+                required
+              />
             </div>
 
             <div class="col-md-8">
               <label for="endereco" class="form-label">Endereço</label>
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="endereco"
-                  placeholder="Rua, número, bairro"
-                  required
-                />
-                <label for="endereco">Rua, número, bairro</label>
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="endereco"
+                placeholder="Rua, número, bairro"
+                required
+              />
             </div>
 
             <div class="col-md-4">
               <label for="cpf" class="form-label">CPF</label>
-              <div class="input-group">
-                <span class="input-group-text"
-                  ><i class="bi bi-person-vcard"></i
-                ></span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cpf"
-                  placeholder="000.000.000-00"
-                  required
-                />
-              </div>
+              <input
+                type="text"
+                class="form-control"
+                id="cpf"
+                placeholder="000.000.000-00"
+                required
+              />
             </div>
 
             <div class="col-md-4">
@@ -154,5 +146,13 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+      // Alternar modo escuro
+      const toggleBtn = document.getElementById("toggle-dark");
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        document.querySelector(".navbar").classList.toggle("dark-mode");
+      });
+    </script>
   </body>
 </html>
